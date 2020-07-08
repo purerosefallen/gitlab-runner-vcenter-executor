@@ -19,7 +19,7 @@ Displays `runners.custom` session only.
     cleanup_exec = "/opt/vc/src/cleanup.sh" # Path to a bash script to delete VM and disks.
 ```
 
-# Volumes
+## Volumes
 
 * `/opt/vc/ssh/id_rsa` The SSH private key used for SSHing into the worker VMs.
 
