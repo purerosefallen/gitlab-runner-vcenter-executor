@@ -11,7 +11,7 @@ set -eo pipefail
 trap "exit $SYSTEM_FAILURE_EXIT_CODE" ERR
 
 # Install the VM
-govc vm.clone "-dc=$DATACENTER" -on=true -waitip=true "-vm=$TEMPLATE" "-host=$VC_HOST" "-pool=$RESOURCE_POOL" "-ds=$DATASTORE" "-net=$NETWORK" "-c=$CPU_COUNT" "-m=$MEM_COUNT" "$VM_ID"
+govc vm.clone "-dc=$VC_DATACENTER" -on=true -waitip=true "-vm=$VC_TEMPLATE" "-host=$VC_HOST" "-pool=$VC_RESOURCE_POOL" "-ds=$VC_DATASTORE" "-net=$VC_NETWORK" "-c=$VC_CPUS" "-m=$VC_MEMS" "$VM_ID"
 
 # Wait for VM to get IP
 echo 'Waiting for VM to get IP'
@@ -36,7 +36,7 @@ done
 # Wait for ssh to become available
 echo "Waiting for sshd to be available"
 for i in $(seq 1 30); do
-    if ssh -i "${currentDir}/../ssh/id_rsa" -o StrictHostKeyChecking=no "$SSH_USER@$VM_IP" >/dev/null 2>/dev/null; then
+    if ssh -i "${currentDir}/../ssh/id_rsa" -o StrictHostKeyChecking=no "$VC_SSH_USER@$VM_IP" >/dev/null 2>/dev/null; then
         break
     fi
 

@@ -8,4 +8,4 @@ source ${currentDir}/base # Get variables from base script.
 set -eo pipefail
 
 # Destroy VM.
-govc vm.destroy "-dc=$DATACENTER" "$VM_ID"
+govc vm.destroy "-dc=$VC_DATACENTER" "$VM_ID"

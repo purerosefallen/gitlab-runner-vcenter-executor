@@ -1,5 +1,7 @@
 /ssh
-/config
 
 .git*
 Dockerfile
+config.example
+README.md
+LICENSE

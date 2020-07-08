@@ -6,5 +6,5 @@ source ${currentDir}/../config # config file
 VM_ID="runner-$CUSTOM_ENV_CI_RUNNER_ID-project-$CUSTOM_ENV_CI_PROJECT_ID-concurrent-$CUSTOM_ENV_CI_CONCURRENT_PROJECT_ID-job-$CUSTOM_ENV_CI_JOB_ID"
 
 _get_vm_ip() {
-    govc vm.info "-dc=$DATACENTER" -json "$VM_ID" | jq .VirtualMachines[0].Guest.IpAddress | sed 's/"//g'
+    govc vm.info "-dc=$VC_DATACENTER" -json "$VM_ID" | jq .VirtualMachines[0].Guest.IpAddress | sed 's/"//g'
 }
