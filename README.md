@@ -1,3 +1,7 @@
 # GitLab runner vCenter executor
 
-Gitlab Custom executor based on `govc`.
+Gitlab vCenter executor based on `govc`.
+
+## How to use
+
+To be added..

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# /opt/vc/prepare.sh
+# /opt/vc/src/prepare.sh
 
 currentDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 source ${currentDir}/base # Get variables from base script.
