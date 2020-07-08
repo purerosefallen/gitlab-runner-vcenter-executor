@@ -5,3 +5,15 @@ RUN wget -O - https://github.com/vmware/govmomi/releases/download/v0.23.0/govc_l
 
 WORKDIR /opt/vc
 COPY ./src ./
+
+ENV GOVC_USERNAME administrator@example.com
+ENV GOVC_PASSWORD pass_here
+ENV GOVC_URL vc.example.com
+ENV VC_DATACENTER example
+ENV VC_HOST esxi.example.com
+ENV VC_RESOURCE_POOL runners
+ENV VC_DATASTORE example-datastore1
+ENV VC_NETWORK example-network
+ENV VC_CPUS 2
+ENV VC_MEMS 4096
+ENV VC_SSH_USER root
