@@ -1,0 +1,13 @@
+export GOVC_USERNAME=administrator@example.com
+export GOVC_PASSWORD=password_here
+export GOVC_URL=vc.example.com
+
+export DATACENTER=example
+export VC_HOST=host.example.com
+export RESOURCE_POOL=example
+export DATASTORE=example-datastore1
+export NETWORK=example-runners
+export TEMPLATE=runner-template-example
+export CPU_COUNT=2
+export MEM_COUNT=4096
+export SSH_USER=root
