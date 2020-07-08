@@ -23,7 +23,7 @@ Displays `runners.custom` session only.
 
 * `/opt/vc/ssh/id_rsa` The SSH private key used for SSHing into the worker VMs.
 
-# Environment variables
+## Environment variables
 
 ```Dockerfile
 ENV GOVC_USERNAME administrator@example.com
@@ -39,3 +39,7 @@ ENV VC_CPUS 2
 ENV VC_MEMS 4096
 ENV VC_SSH_USER root
 ```
+
+## VM base image
+
+The VM base image should work same with the example given by (GitLab's Official libvirt executor)[https://docs.gitlab.com/runner/executors/custom_examples/libvirt.html]. You may make a same one refering to this.
