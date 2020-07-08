@@ -7,7 +7,7 @@ source ${currentDir}/base # Get variables from base script.
 
 VM_IP=$(_get_vm_ip)
 
-ssh -i "${currentDir}/ssh/id_rsa" -o StrictHostKeyChecking=no "$SSH_USER@$VM_IP" /bin/bash < "${1}"
+ssh -i "${currentDir}/../ssh/id_rsa" -o StrictHostKeyChecking=no "$SSH_USER@$VM_IP" /bin/bash < "${1}"
 if [ $? -ne 0 ]; then
     # Exit using the variable, to make the build as failure in GitLab
     # CI.

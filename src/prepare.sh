@@ -36,7 +36,7 @@ done
 # Wait for ssh to become available
 echo "Waiting for sshd to be available"
 for i in $(seq 1 30); do
-    if ssh -i "${currentDir}/id_rsa" -o StrictHostKeyChecking=no "$SSH_USER@$VM_IP" >/dev/null 2>/dev/null; then
+    if ssh -i "${currentDir}/../ssh/id_rsa" -o StrictHostKeyChecking=no "$SSH_USER@$VM_IP" >/dev/null 2>/dev/null; then
         break
     fi
 
