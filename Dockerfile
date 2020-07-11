@@ -18,3 +18,4 @@ ENV VC_TEMPLATE runner-template-debian
 ENV VC_CPUS 2
 ENV VC_MEMS 4096
 ENV VC_SSH_USER root
+ENV VC_SHELL /bin/bash
