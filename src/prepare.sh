@@ -18,7 +18,7 @@ echo 'Waiting for VM to get IP'
 for i in $(seq 1 30); do
     VM_IP=$(_get_vm_ip)
 
-    if [ -n "$VM_IP" ]; then
+    if [[ -n "$VM_IP" && "$VM_IP" -ne "fail" ]]; then
         echo "VM got IP: $VM_IP"
         break
     fi

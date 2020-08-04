@@ -4,5 +4,10 @@ currentDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 VM_ID="runner-$CUSTOM_ENV_CI_RUNNER_ID-project-$CUSTOM_ENV_CI_PROJECT_ID-concurrent-$CUSTOM_ENV_CI_CONCURRENT_PROJECT_ID-job-$CUSTOM_ENV_CI_JOB_ID"
 
 _get_vm_ip() {
-    govc vm.info "-dc=$VC_DATACENTER" -json "$VM_ID" | jq .VirtualMachines[0].Guest.IpAddress | sed 's/"//g'
+    JSON=$(govc vm.info "-dc=$VC_DATACENTER" -json "$VM_ID")
+    if [ $? -ne 0 ]; then
+        echo "fail"
+    else
+        echo "$JSON" | jq .VirtualMachines[0].Guest.IpAddress | sed 's/"//g'
+    fi
 }
