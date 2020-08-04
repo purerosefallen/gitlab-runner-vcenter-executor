@@ -8,7 +8,7 @@ source ${currentDir}/base # Get variables from base script.
 for i in $(seq 1 30); do
     VM_IP=$(_get_vm_ip)
 
-    if [[ -n "$VM_IP" && "$VM_IP" -ne "fail" ]]; then
+    if [[ -n "$VM_IP" && "$VM_IP" != "fail" ]]; then
         break
     fi
 
